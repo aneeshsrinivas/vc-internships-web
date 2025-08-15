@@ -2,6 +2,12 @@
 
 A responsive web application that helps users find and compare internship programs based on their skills, availability, and time commitment.
 
+
+## 🌐 Live Website  
+My website is live at: [https://aneeshsrinivas.github.io/vc-internships-web/](https://aneeshsrinivas.github.io/vc-internships-web/)  
+Feel free to explore it and suggest any changes or improvements!
+
+
 ## 🌟 Features
 
 ### 🔍 Skill Matching
@@ -137,5 +143,6 @@ Distributed under the MIT License. See LICENSE for more information.
 
 ✉️ Contact
 Contact me here - aneeshsrinivas2006@gmail.com
+
 
 Project Link: https://github.com/aneeshsrinivas/vc-internships-web
