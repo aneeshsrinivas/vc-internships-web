@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internships</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="accessibility-panel">
+        <button class="accessibility-toggle" aria-label="Accessibility options">☑️</button>
+        <div class="accessibility-options">
+            <div class="option-group">
+                <label><input type="checkbox" id="reduced-motion"> Reduced Motion</label>
+                <label><input type="checkbox" id="high-contrast"> High Contrast</label>
+                <label><input type="checkbox" id="colorblind-mode"> Colorblind Mode</label>
+            </div>
+            <div class="option-group">
+                <button id="no-mouse-challenge" class="button-secondary">No Mouse Challenge</button>
+                <button id="aria-coach" class="button-secondary">ARIA Coach</button>
+                <button id="contrast-checker" class="button-secondary">Contrast Checker</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="hero">
+            <h1>Internships</h1>
+            <p class="subtitle">Explore development programs</p>
+            
+            <div class="controls">
+                <div class="skill-shader">
+                    <input type="text" id="skill-input" placeholder="Enter your skills or GitHub URL" aria-label="Enter your skills">
+                    <button id="match-button" class="button-primary" aria-label="Match skills to internship programs">Match Skills</button>
+                </div>
+                <div class="view-toggle">
+                    <button id="plain-language" class="button-secondary explain-toggle" aria-pressed="false" aria-label="Toggle plain language explanations">
+                        <span class="button-label">Explain Like I'm New</span>
+                    </button>
+                    <button id="start-tour" class="button-secondary" aria-label="Start guided tour">Take Guided Tour</button>
+                </div>
+                <div class="commitment-slider">
+                    <label for="hours-slider">Hours/week I can give: <span id="hours-value">10</span></label>
+                    <input type="range" id="hours-slider" min="5" max="40" value="10" aria-label="Available hours per week">
+                </div>
+            </div>
+
+            <div class="availability-tetris">
+                <h2>Weekly Availability</h2>
+                <div class="availability-grid" role="grid" aria-label="Weekly availability">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </div>
+
+        <section class="programs" aria-labelledby="programs-heading">
+            <h2 id="programs-heading" class="visually-hidden">Available programs</h2>
+            
+            <div class="compare-tool">
+                <button id="start-diff" class="button-compare" aria-label="Compare internship programs">
+                    <span class="compare-icon" aria-hidden="true">⚖️</span>
+                    Compare Programs
+                    <span class="compare-hint">(Select two below)</span>
+                </button>
+                <div class="diff-result" id="diff-result" aria-live="polite"></div>
+            </div>
+
+            <div class="cards-container" id="cards-container">
+                <article class="card" data-skills="html,css,javascript,web" data-duration="30" data-hours="15" data-start="2023-11-05" data-values="mentorship,flexibility">
+                    <div class="card-actions">
+                        <button class="bookmark-btn" data-program="web-dev" aria-label="Bookmark Web Development Internship">🔖</button>
+                        <button class="compare-btn" data-program="web-dev" aria-label="Compare Web Development Internship">⚖️</button>
+                    </div>
+                    <h3 class="card__title">Web Development Internship</h3>
+                    <dl class="card__meta">
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">⏱️</span> Duration:</dt>
+                            <dd>1 month / 2 months</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">📍</span> Location:</dt>
+                            <dd>Virtual</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">💼</span> Stipend:</dt>
+                            <dd>-</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">📅</span> Start date:</dt>
+                            <dd>05/11/2023</dd>
+                        </div>
+                    </dl>
+                    <div class="match-meter"></div>
+                    <div class="feasibility-badge"></div>
+                    <a href="https://example.com" target="_blank" rel="noopener" class="card__button" aria-label="View details for Web Development Internship">View Details</a>
+                </article>
+
+                <article class="card" data-skills="java,android,mobile" data-duration="30" data-hours="20" data-start="2023-11-05" data-values="impact,structure">
+                    <div class="card-actions">
+                        <button class="bookmark-btn" data-program="app-dev" aria-label="Bookmark App Development Internship">🔖</button>
+                        <button class="compare-btn" data-program="app-dev" aria-label="Compare App Development Internship">⚖️</button>
+                    </div>
+                    <h3 class="card__title">App Development Internship</h3>
+                    <dl class="card__meta">
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">⏱️</span> Duration:</dt>
+                            <dd>1 month / 2 months</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">📍</span> Location:</dt>
+                            <dd>Virtual</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">💼</span> Stipend:</dt>
+                            <dd>-</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">📅</span> Start date:</dt>
+                            <dd>05/11/2023</dd>
+                        </div>
+                    </dl>
+                    <div class="match-meter"></div>
+                    <div class="feasibility-badge"></div>
+                    <a href="https://example.com" target="_blank" rel="noopener" class="card__button" aria-label="View details for App Development Internship">View Details</a>
+                </article>
+
+                <article class="card" data-skills="python,data,scripting" data-duration="30" data-hours="10" data-start="2023-11-05" data-values="mentorship,impact">
+                    <div class="card-actions">
+                        <button class="bookmark-btn" data-program="python-dev" aria-label="Bookmark Python Programming Internship">🔖</button>
+                        <button class="compare-btn" data-program="python-dev" aria-label="Compare Python Programming Internship">⚖️</button>
+                    </div>
+                    <h3 class="card__title">Python Programming Internship</h3>
+                    <dl class="card__meta">
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">⏱️</span> Duration:</dt>
+                            <dd>1 month / 2 months</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">📍</span> Location:</dt>
+                            <dd>Virtual</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">💼</span> Stipend:</dt>
+                            <dd>-</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">📅</span> Start date:</dt>
+                            <dd>05/11/2023</dd>
+                        </div>
+                    </dl>
+                    <div class="match-meter"></div>
+                    <div class="feasibility-badge"></div>
+                    <a href="https://example.com" target="_blank" rel="noopener" class="card__button" aria-label="View details for Python Programming Internship">View Details</a>
+                </article>
+
+                <article class="card" data-skills="java,oop,backend" data-duration="60" data-hours="25" data-start="2023-11-05" data-values="structure,impact">
+                    <div class="card-actions">
+                        <button class="bookmark-btn" data-program="java-dev" aria-label="Bookmark Java Programming Internship">🔖</button>
+                        <button class="compare-btn" data-program="java-dev" aria-label="Compare Java Programming Internship">⚖️</button>
+                    </div>
+                    <h3 class="card__title">Java Programming Internship</h3>
+                    <dl class="card__meta">
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">⏱️</span> Duration:</dt>
+                            <dd>1 month / 2 months</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">📍</span> Location:</dt>
+                            <dd>Virtual</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">💼</span> Stipend:</dt>
+                            <dd>-</dd>
+                        </div>
+                        <div class="card__meta-item">
+                            <dt><span class="card-icon" aria-hidden="true">📅</span> Start date:</dt>
+                            <dd>05/11/2023</dd>
+                        </div>
+                    </dl>
+                    <div class="match-meter"></div>
+                    <div class="feasibility-badge"></div>
+                    <a href="https://example.com" target="_blank" rel="noopener" class="card__button" aria-label="View details for Java Programming Internship">View Details</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
